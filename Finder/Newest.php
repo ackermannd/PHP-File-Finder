@@ -15,6 +15,10 @@ class Newest extends \ackermannd\File\Finder {
 		parent::__construct($path);
 	}
 
+	/**
+	* returns the newest file from the given directory
+	* @return SplFileInfo $newest
+	*/
 	public function find() {
 		$this->rewind();
 		$newest = null;

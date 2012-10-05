@@ -14,6 +14,12 @@ class ModificationTime implements SubpackageInterface {
 		$this->_modificationTime = $modificationTime;
 	}
 
+	/**
+	* returns true if the given File was modified within the last XX Seconds ($modificationTime)
+	* @see __constructor
+	* @param SplFileInfo $file
+	* @return boolean
+	*/
 	public function filter(\SplFileInfo $file) {
 		if ($file->getMTime() > time() - $this->_modificationTime) {
 			return true;

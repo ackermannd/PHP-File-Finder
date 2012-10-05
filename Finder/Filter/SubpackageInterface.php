@@ -8,5 +8,10 @@
 namespace ackermannd\File\Finder\Filter;
 
 interface SubpackageInterface {
+	/**
+	* returns true if the given file matches the filter criteria
+	* @param SplFileInfo $file
+	* @return boolean
+	*/
 	public function filter(\SplFileInfo $file);
 }

@@ -14,6 +14,13 @@ class SkipAndUnlinkExtension implements SubpackageInterface {
 		$this->_extension = $extension;
 	}
 
+	/**
+	* returns true if the given file matches one of the given extensions ($extension)
+	* automatically unlinks matched files
+	* @see __constructor
+	* @param SplFileInfo $file
+	* @return boolean
+	*/
 	public function filter(\SplFileInfo $file) {
 		if (is_array($this->_extension)) {
 			if (in_array(pathinfo($file->getFilename(), PATHINFO_EXTENSION), $this->_extension)) {

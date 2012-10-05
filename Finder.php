@@ -17,6 +17,11 @@ class Finder {
 		$this->_iterator = new \DirectoryIterator($path);
 	}
 
+	/**
+	* iterates over directory and returns matched files
+	* files sorted out through filters will be skipped
+	* @return array (SplFileInfo)
+	*/
 	public function find() {
 		$tmpFiles = array();
 		foreach ($this->_it as $file) {
@@ -33,6 +38,11 @@ class Finder {
 		return $tmpFiles;
 	}
 
+	/**
+	* returns true if any filter matched the file
+	* @param SplFileInfo $file
+	* @return boolean
+	*/
 	protected function _applyFilter(\SplFileInfo $file) {
 		$filterHit = false;
 		foreach ($this->_filter as $filter) {
@@ -41,6 +51,10 @@ class Finder {
 		return $filterHit;
 	}
 
+	/**
+	* adds a filter which files will be counterchecked
+	* @param \ackermannd\File\Finder\Filter\SubpackageInterface $filter
+	*/
 	public function addFilter(\ackermannd\File\Finder\Filter\SubpackageInterface $filter) {
 		$this->_filter[] = $filter;
 	}
