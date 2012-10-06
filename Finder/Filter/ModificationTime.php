@@ -10,6 +10,10 @@ namespace ackermannd\File\Finder\Filter;
 class ModificationTime implements SubpackageInterface {
 
 	protected $_modificationTime = null;
+
+	/**
+	* @param int $modificationTime - time in seconds in which a file mustn't be modified to be valid
+	*/
 	public function __construct($modificationTime) {
 		$this->_modificationTime = $modificationTime;
 	}

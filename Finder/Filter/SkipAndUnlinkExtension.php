@@ -10,6 +10,10 @@ namespace ackermannd\File\Finder\Filter;
 class SkipAndUnlinkExtension implements SubpackageInterface {
 
 	protected $_extension = null;
+
+	/**
+	* @param string/array $extension - file extensions to be filtered, either a string or array of strings, i.e. 'txt' or array('log', 'csv')
+	*/
 	public function __construct($extension) {
 		$this->_extension = $extension;
 	}
