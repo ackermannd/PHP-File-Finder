@@ -20,10 +20,14 @@ class Newest extends \ackermannd\File\Finder {
 	* @return SplFileInfo $newest
 	*/
 	public function find() {
-		$this->rewind();
+		$this->_iterator->rewind();
 		$newest = null;
-		foreach ($this as $file) {
-			if ($this->_applyFilter($file)) {
+		foreach ($this->_iterator as $file) {
+			if ($file->isDot()
+				|| $file->isLink()
+				|| $file->isDir()
+				|| $this->_applyFilter($file)) 
+			{
 				continue;
 			} else {
 				if ($newest === null) {
