@@ -24,7 +24,7 @@ class Finder {
 	*/
 	public function find() {
 		$tmpFiles = array();
-		foreach ($this->_it as $file) {
+		foreach ($this->_iterator as $file) {
 			if ($file->isDot()
 				|| $file->isLink()
 				|| $file->isDir()

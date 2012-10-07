@@ -7,8 +7,8 @@
  */
 namespace ackermannd\File\Tests\Finder\Filter;
 
-include_once(__DIR__ . '/../../Finder/Filter/SubpackageInterface.php');
-include_once(__DIR__ . '/../../Finder/Filter/Closure.php');
+include_once(__DIR__ . '/../../../Finder/Filter/SubpackageInterface.php');
+include_once(__DIR__ . '/../../../Finder/Filter/Closure.php');
 
 class ClosureTest extends \PHPUnit_Framework_TestCase {
 	protected $_object = null;
