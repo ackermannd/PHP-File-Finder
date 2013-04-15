@@ -21,4 +21,3 @@ Filter
 ------
 
 Filter classes can be created and added to a Finder to Filter the returned Files. All added Filters will be tested against the given Directory files.
-asdf
